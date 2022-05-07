@@ -1,0 +1,49 @@
+.employeeList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+.employeeList .data_table_container {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.employeeList .data_table_container .no_data {
+    color: #93AD18;
+}
+
+.employeeList .data_table_header select,
+.employeeList .data_table_header input {
+    border-bottom: 1.7px solid #93AD18;
+}
+
+.employeeList .data_table_header input:focus,
+.employeeList .data_table_header select:focus {
+    border-bottom: 1.7px solid #93AD18;
+}
+
+.employeeList .data_table_header h1 {
+    color: #93AD18;
+}
+
+.employeeList .data_table td {
+    background-color: #93AD18;
+}
+
+.employeeList .data_table .tr_hover {
+    background-color: #5A6E07;
+}
+
+.employeeList .data_table .td_hover {
+    background-color: transparent;
+}
+
+.employeeList .navigation_buttons .button_active {
+    background-color: #93AD18;
+}
+
+.employeeList .arrowIcons .active {
+    color: #93AD18;
+}

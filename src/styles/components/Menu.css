@@ -1,0 +1,57 @@
+.menu {
+    width: fit-content;
+}
+
+.menu .textBox {
+    display: inline-flex;
+    padding: 12px 10px;
+    background-color: transparent;
+    outline: 1.7px solid #93AD18;
+    cursor: pointer;
+    margin-bottom: 1px;
+    width: 200px;
+    justify-content: space-between;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.menu .textBox:hover {
+    background-color: #93AD18;
+    color: #fff;
+}
+
+.menu .textBox p {
+    margin-right: 5px;
+}
+
+.menu .textBox svg {
+    margin-top: 1.3px;
+    font-size: 18px;
+    color: #5A6E07;
+}
+
+
+
+.menu .textBox .dropdown_icon_inverse {
+    transform: rotate(180deg);
+}
+
+.menu .popUp {
+    list-style: none;
+    width: 200px;
+    background-color: #fff;
+    outline: 1.7px solid #93AD18;
+    position: absolute;
+    z-index: 3;
+    overflow-y: auto;
+    max-height: 250px;
+}
+
+.menu .popHover {
+    background-color: #93AD18;
+    color: #fff;
+}
+
+.menu .popUp li {
+    cursor: pointer;
+    padding: 5px;
+}
