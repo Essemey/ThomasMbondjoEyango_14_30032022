@@ -6,6 +6,7 @@ export function Modal({ visible, setVisible, title, style, children }) {
     const modalStyle = { ...style }
 
 
+
     return visible ?
         <div className="modal_background">
             <div className="modal" style={modalStyle}>
