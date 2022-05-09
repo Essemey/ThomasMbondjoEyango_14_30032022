@@ -253,15 +253,9 @@ export default function CreateEmployee({ employee, setEmployee, setPage }) {
     const saveEmployee = (e) => {
         e.preventDefault()
         const employee = { ...Object.fromEntries(new FormData(e.target)), id: uid() }
-        console.log(employee)
         setEmployee(s => [...s, employee])
         setVisible(true)
-        /*const timer = setTimeout(() => {
-            setVisible(false)
-            clearTimeout(timer)
-        }, 1500)*/
     }
-
 
 
     return <div id="home">

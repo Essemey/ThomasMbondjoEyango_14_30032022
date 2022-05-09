@@ -17,16 +17,17 @@ export function DatePicker({ id, inputName }) {
     const dateInput = useRef()
 
     const getDayDetails = args => {
-        let date = args.index - args.firstDay;
-        const day = args.index % 7;
+        let date = args.index - args.firstDay; //Numéro du jour
+        const day = args.index % 7;  //Jour de la semaine
+        console.log(args.month)
         let prevMonth = args.month - 1;
         let prevYear = args.year;
-        if (prevMonth < 0) {
+        if (prevMonth < 0) { //Si on est en janvier
             prevMonth = 11;
             prevYear--;
         }
         const prevMonthNumberOfDays = getNumberOfDays(prevYear, prevMonth);
-        const _date = (date < 0 ? prevMonthNumberOfDays + date : date % args.numberOfDays) + 1;
+        const _date = (date < 0 ? prevMonthNumberOfDays + date : date % args.numberOfDays) + 1; //Numéro du jour
         const month = date < 0 ? -1 : date >= args.numberOfDays ? 1 : 0;
         const timestamp = new Date(args.year, args.month, _date).getTime();
         return {
@@ -179,7 +180,7 @@ export function DatePicker({ id, inputName }) {
         isOpen: false
     });
 
-
+    console.log(datePicker.monthDetails)
 
     return <div className='MyDatePicker'>
         <div className='mdp-input' onClick={() => setDatePicker(s => ({ ...s, isOpen: !s.isOpen }))}>

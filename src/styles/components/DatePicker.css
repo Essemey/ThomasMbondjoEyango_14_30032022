@@ -19,24 +19,28 @@
     /* Non-prefixed version, currently */
 }
 
-/*.mdp-input {
+.mdp-input {
     float: left;
-    width: 150px;
-    height: 35px;
+    width: 200px;
+    max-width: 200px;
+    border: 1.7px solid #93AD18;
+    height: 45px;
     overflow: hidden;
-    border-radius: 20px;
-}*/
+}
+
 
 .mdp-input input:focus {
     outline: none;
+    border: none;
 }
 
 .mdp-input input {
+    border: none;
     background-color: transparent;
-    border: 2px solid #93AD18;
-    width: 200px;
-    padding-right: 10px;
-    height: 45px;
+    width: 115%;
+    position: relative;
+    left: -2px;
+    height: 42px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
