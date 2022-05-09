@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import '../../styles/components/DatePicker.css'
+import PropTypes from 'prop-types';
 
 
 export function DatePicker({ id, inputName }) {
@@ -16,10 +17,10 @@ export function DatePicker({ id, inputName }) {
 
     const dateInput = useRef()
 
+    //Retourne un objet qui représente toutes les informations importantes sur un jour
     const getDayDetails = args => {
         let date = args.index - args.firstDay; //Numéro du jour
         const day = args.index % 7;  //Jour de la semaine
-        console.log(args.month)
         let prevMonth = args.month - 1;
         let prevYear = args.year;
         if (prevMonth < 0) { //Si on est en janvier
@@ -43,6 +44,7 @@ export function DatePicker({ id, inputName }) {
         return 40 - new Date(year, month, 40).getDate();
     }
 
+    //Retourne un tableau d'objets qui représente les détails de chaque jour présent dans le mois actuel et parfois le suivant et le précédent
     const getMonthDetails = (year, month) => {
         const firstDay = (new Date(year, month)).getDay();
         const numberOfDays = getNumberOfDays(year, month);
@@ -180,7 +182,6 @@ export function DatePicker({ id, inputName }) {
         isOpen: false
     });
 
-    console.log(datePicker.monthDetails)
 
     return <div className='MyDatePicker'>
         <div className='mdp-input' onClick={() => setDatePicker(s => ({ ...s, isOpen: !s.isOpen }))}>
@@ -220,4 +221,9 @@ export function DatePicker({ id, inputName }) {
             </div>
         ) : ''}
     </div>
+}
+
+DatePicker.propTypes = {
+    id: PropTypes.string,
+    inputName: PropTypes.string.isRequired
 }

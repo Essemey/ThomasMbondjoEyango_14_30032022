@@ -1,10 +1,11 @@
 import '../styles/components/Modal.css'
 import { Cross } from './icons/CrossIcon'
+import PropTypes from 'prop-types'
+import { Children } from 'react'
 
 export function Modal({ visible, setVisible, title, style, children }) {
 
     const modalStyle = { ...style }
-
 
 
     return visible ?
@@ -20,4 +21,15 @@ export function Modal({ visible, setVisible, title, style, children }) {
             </div>
         </div>
         : null
+}
+
+Modal.propTypes = {
+    visible: PropTypes.bool.isRequired,
+    setVisible: PropTypes.func.isRequired,
+    title: PropTypes.string,
+    style: PropTypes.object,
+    children: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]).isRequired
 }

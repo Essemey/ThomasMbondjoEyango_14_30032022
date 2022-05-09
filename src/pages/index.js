@@ -4,12 +4,10 @@ import { Modal } from "../components/Modal";
 import { useModal } from "../hooks/useModal";
 import { uid } from "../utils/uid";
 import '../styles/pages/index.css'
+import PropTypes from 'prop-types';
 
 
-
-
-
-export default function CreateEmployee({ employee, setEmployee, setPage }) {
+export default function CreateEmployee({ setEmployee, setPage }) {
 
     const [visible, setVisible] = useModal()
 
@@ -146,4 +144,9 @@ export default function CreateEmployee({ employee, setEmployee, setPage }) {
         </Modal>
 
     </div >
+}
+
+CreateEmployee.propTypes = {
+    setEmployee: PropTypes.func.isRequired,
+    setPage: PropTypes.func.isRequired
 }

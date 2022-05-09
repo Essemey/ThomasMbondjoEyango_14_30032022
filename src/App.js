@@ -11,7 +11,7 @@ export default function App() {
 
 
     return page === 'createEmployee' ?
-        <CreateEmployee setEmployee={setEmployee} employee={employee} setPage={setPage} />
+        <CreateEmployee setEmployee={setEmployee} setPage={setPage} />
         :
         <EmployeeList setEmployee={setEmployee} employee={employee} setPage={setPage} />
 }

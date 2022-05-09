@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 export function PopUp({ content, menu, setMenu }) {
 
@@ -13,4 +13,10 @@ export function PopUp({ content, menu, setMenu }) {
             </li>
         )}
     </ul>
+}
+
+PopUp.propTypes = {
+    content: PropTypes.array.isRequired,
+    menu: PropTypes.object.isRequired,
+    setMenu: PropTypes.func.isRequired
 }

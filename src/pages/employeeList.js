@@ -1,5 +1,6 @@
 import { DataTable, Column } from '@essemey/react-data-table'
 import '../styles/pages/employeeList.css'
+import PropTypes from 'prop-types';
 
 
 export default function EmployeeList({ employee, setEmployee, setPage }) {
@@ -19,4 +20,11 @@ export default function EmployeeList({ employee, setEmployee, setPage }) {
         </DataTable>
         <button className="pageBtn" onClick={() => setPage('createEmployee')}>Add an Employee</button>
     </div>
+}
+
+
+EmployeeList.propTypes = {
+    employee: PropTypes.array.isRequired,
+    setEmployee: PropTypes.func.isRequired,
+    setPage: PropTypes.func.isRequired
 }

@@ -2,6 +2,7 @@ import { Children, useMemo, useRef, useState, useEffect } from "react"
 import { ArrowIcon } from '../icons/ArrowIcon'
 import '../../styles/components/Menu.css'
 import { PopUp } from "./PopUp"
+import PropTypes from 'prop-types'
 
 
 export function Menu({ name, id, children }) {
@@ -20,6 +21,7 @@ export function Menu({ name, id, children }) {
 
     const selectMenu = useRef()
 
+    //Met à jour la valeur du select afin que le formulaire est accès à la bonne donnée
     useEffect(() => {
         selectMenu.current.value = menu.value
     }, [menu.value])
@@ -47,4 +49,13 @@ export function Menu({ name, id, children }) {
             {options.map(option => option)}
         </select>
     </div>
+}
+
+Menu.propTypes = {
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]).isRequired
 }
